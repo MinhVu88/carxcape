@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField'; 
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
+import Tooltip from '@mui/material/Tooltip';
 import CarList from './CarList';
 
 type User = {
@@ -66,13 +67,15 @@ const Login = () => {
 					name='password' 
 					label='Password' 
 					onChange={handleInputChange}/>
-				<Button 
-					variant='outlined' 
-					color='primary' 
-					onClick={handleLogin}
-				>
-					Login
-				</Button>
+				<Tooltip title='username: user/admin | password: user/admin'>	
+					<Button 
+						variant='outlined' 
+						color='primary' 
+						onClick={handleLogin}
+					>
+						Login
+					</Button>
+				</Tooltip>
 				<Snackbar
 					open={isOpen}
 					autoHideDuration={3000} 
